@@ -227,7 +227,8 @@ img {
 </div>
 <div id="variables-and-units" class="section level1">
 <h1>Variables and Units</h1>
-<p>The tidy data only includes a subset of the features in the source data – 66 of the 561 features. The table below lists the 66 variables using names in the <em>features.txt</em> file, and the column number for the variable in the source files, <em>X_train.txt</em> and <em>X_test.txt</em>. For simplicity the labels listed in <em>features.txt</em> have been renamed for use as labels in the columns (3-68) of the <em>tidyData data frame</em> saved in <em>tidyData.csv</em>. The 1st and 2nd columns of the <em>tidyData data frame</em> contain the subject and activity ids and are labeled, Subject and Activity, respectively. The subject ids remain unchanged as integers from 1-30, but the activity labels were converted to a factor with labels:</p>
+<p>The tidy data only includes a subset of the features in the source data – 66 of the 561 features. The table below lists the 66 variables using names in the <em>features.txt</em> file, and the column number for the variable in the source files, <em>X_train.txt</em> and <em>X_test.txt</em>. For simplicity the labels listed in <em>features.txt</em> have been renamed for use as labels in the columns (3-68) of the <code>tidyData</code> dataframe saved in <em>tidyData.csv</em>, and also used in the <code>tidySummary</code> dataframe saved under <em>tidySummary.csv</em> and that was submitted to the assignment area in Coursera. The 1st and 2nd columns of the <code>tidyData</code> and <code>tidySummary</code> dataframes contain the subject and activity ids and are labeled, Subject and Activity, respectively. The subject ids remain unchanged as integers from 1-30, but the activity labels were converted to a factor with labels.</p>
+<p>The <code>tidyData</code> dataframe has dimensions 10299x68 while the <code>tidySummary</code> data frame has dimensions 180x68 since it is produced by generaing the means for the 66 variables but grouped by Subject (30) and Activity (6).</p>
 <div id="variable-names-and-locations" class="section level2">
 <h2>Variable names and locations:</h2>
 <table>
@@ -486,15 +487,15 @@ img {
 </ul></li>
 <li><em>readMergeClean.R</em>
 <ul>
-<li>loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt, y_train.txt, and y_test.txt) into memory and merges the <em>train</em> and <em>test</em> data sets by stacking the <em>X_train.txt</em> data on top of the <em>X_test.txt</em> data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 data frame. In the process the activity codes are converted from integer data to factors to match the description in <em>activity_labels.txt</em>. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This data frame is written to the file <em>tidyData.csv</em>. The details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
+<li>loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt, y_train.txt, and y_test.txt) into memory and merges the <em>train</em> and <em>test</em> data sets by stacking the <em>X_train.txt</em> data on top of the <em>X_test.txt</em> data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 dataframe. In the process the activity codes are converted from integer data to factors to match the description in <em>activity_labels.txt</em>. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This dataframe is written to the file <em>tidyData.csv</em>. The details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
 </ul></li>
 <li><em>tidySummary.R</em>
 <ul>
-<li>This scripts loads the data from the file <em>tidyData.csv</em> and generates simple summary statistics (mean values) after grouping by subject id and activity. The result is a data frame that is written to the file <em>tidySummary.csv</em>. The dimensions of this dataframe is 180x68 and details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
+<li>This scripts loads the data from the file <em>tidyData.csv</em> and generates simple summary statistics (mean values) after grouping by subject id and activity. The result is a dataframe that is written to the file <em>tidySummary.csv</em>. The dimensions of this dataframe is 180x68 and details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
 </ul></li>
 </ul></li>
 </ol>
-<p>Details of the operations of these scripts are found in <a href="README.Rmd" class="uri">README.Rmd</a>. Also see comments within the scripts.</p>
+<p>Details of the operations of these scripts are found in <a href="README.Rmd" class="uri">README.Rmd</a>. Also see comments within the scripts. Note that the file <em>tidyData.csv</em> is an intermediate file to generate the final tidy summary data file, <em>tidySummary.csv</em> that was submitted to the Coursera assignment.</p>
 </div>
 
 

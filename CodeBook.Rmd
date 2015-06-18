@@ -132,11 +132,18 @@ The tidy data only includes a subset of the features in the source data -- 66 of
 561 features. The table below lists the 66 variables using names in the *features.txt*
 file, and the column number for the variable in the source files, *X_train.txt*
 and *X_test.txt*. For simplicity the labels listed in *features.txt* have been
-renamed for use as labels in the columns (3-68) of the *tidyData data frame* saved in
-*tidyData.csv*. The 1st and 2nd columns of the *tidyData data frame* contain the
+renamed for use as labels in the columns (3-68) of the `tidyData` dataframe saved in
+*tidyData.csv*, and also used in the `tidySummary` dataframe saved under
+*tidySummary.csv* and that was submitted to the assignment area in Coursera.
+The 1st and 2nd columns of the `tidyData` and `tidySummary` dataframes contain the
 subject and activity ids and are labeled, Subject and Activity, respectively. The
 subject ids remain unchanged as integers from 1-30, but the activity labels were
-converted to a factor with labels:
+converted to a factor with labels.
+
+The `tidyData` dataframe has dimensions 10299x68 while the `tidySummary` data
+frame has dimensions 180x68 since it is produced by generaing the means for the
+66 variables but grouped by Subject (30) and Activity (6).
+
 
 ## Variable names and locations:
 
@@ -209,12 +216,14 @@ and *tidySummary.csv* files by calling auxilliary R scripts in the following ord
     + *readMergeClean.R*
         + loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt,
         y_train.txt, and y_test.txt) into memory and merges the *train* and *test* data
-        sets by stacking the *X_train.txt* data on top of the *X_test.txt* data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 data frame. In the process the activity codes are converted from integer data to factors to match the description in *activity_labels.txt*. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This data frame is written to the file *tidyData.csv*. The details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
+        sets by stacking the *X_train.txt* data on top of the *X_test.txt* data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 dataframe. In the process the activity codes are converted from integer data to factors to match the description in *activity_labels.txt*. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This dataframe is written to the file *tidyData.csv*. The details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
       
     + *tidySummary.R*
         + This scripts loads the data from the file *tidyData.csv* and generates
-        simple summary statistics (mean values) after grouping by subject id and activity. The result is a data frame that is written to the file *tidySummary.csv*. The dimensions of this dataframe is 180x68 and details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
+        simple summary statistics (mean values) after grouping by subject id and activity. The result is a dataframe that is written to the file *tidySummary.csv*. The dimensions of this dataframe is 180x68 and details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
 
 Details of the operations of these scripts are found in [README.Rmd](README.Rmd). Also see
-comments within the scripts.
+comments within the scripts. Note that the file *tidyData.csv* is an intermediate
+file to generate the final tidy summary data file, *tidySummary.csv* that was
+submitted to the Coursera assignment.
 

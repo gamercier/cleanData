@@ -121,6 +121,14 @@ img {
 <td align="left">tidySummary.R</td>
 <td align="left">Computes data summary. Creates <em>tidySummary.csv</em>.</td>
 </tr>
+<tr class="odd">
+<td align="left">tidyData.csv</td>
+<td align="left">Output of readMergeClean.R script.</td>
+</tr>
+<tr class="even">
+<td align="left">tidySummary.csv</td>
+<td align="left">Output of tidySummary.R script.</td>
+</tr>
 </tbody>
 </table>
 <p>All files are in the top directory of the repo, and the only subdirectory is <em>data</em>. The directory tree for <em>data</em> is described in <em>Codebook.Rmd</em>.</p>
@@ -140,6 +148,7 @@ img {
 <li>tidySummary.R</li>
 </ol>
 <p>None of the scripts take parameters. As the scripts run their progress is displayed in the standard output. It is assumed that there is an internet connection with downloading privileges, and writting privileges in the working directory.</p>
+<p>The readMergeClean.R script takes the data and generates a tidy data dataframe that is written to <em>tidyData.csv</em>. This dataframe is then read by <code>tidySummary.R</code> to generate the final tidy summary data submitted to the Courera assignment. The submitted file is named <em>tidySummary.csv</em></p>
 </div>
 <div id="setwdir.r" class="section level1">
 <h1>setWDir.R</h1>

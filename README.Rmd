@@ -23,6 +23,8 @@ setWDir.R            | Script to set working directory to this repo.
 downLoadData.R       | Script to download data file. Creates *data*.
 readMergeClean.R     | Script to clean data. Creates *tidyData.csv*.
 tidySummary.R        | Computes data summary. Creates *tidySummary.csv*.
+tidyData.csv         | Output of readMergeClean.R script.
+tidySummary.csv      | Output of tidySummary.R script.
 
 
 All files are in the top directory of the repo, and the only subdirectory
@@ -45,6 +47,11 @@ None of the scripts take parameters. As the scripts run their
 progress is displayed in the standard output.
 It is assumed that there is an internet connection with downloading
 privileges, and writting privileges in the working directory.
+
+The readMergeClean.R script takes the data and generates a tidy data dataframe
+that is written to *tidyData.csv*. This dataframe is then read by `tidySummary.R`
+to generate the final tidy summary data submitted to the Courera assignment. The
+submitted file is named *tidySummary.csv*
 
 # setWDir.R
 
