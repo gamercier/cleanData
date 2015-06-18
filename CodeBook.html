@@ -486,15 +486,15 @@ img {
 </ul></li>
 <li><em>readMergeClean.R</em>
 <ul>
-<li>loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt, y_train.txt, and y_test.txt) into memory and merges the <em>train</em> and <em>test</em> data sets by stacking the <em>X_train.txt</em> data on top of the <em>X_test.txt</em> data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 data frame. In the process the activity codes are converted from integer data to factors to match the description in <em>activity_labels.txt</em>. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This data frame is written to the file <em>tidyData.csv</em>. The details of its structure can be found in the <a href="README.html">README</a> file in the repo.</li>
+<li>loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt, y_train.txt, and y_test.txt) into memory and merges the <em>train</em> and <em>test</em> data sets by stacking the <em>X_train.txt</em> data on top of the <em>X_test.txt</em> data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 data frame. In the process the activity codes are converted from integer data to factors to match the description in <em>activity_labels.txt</em>. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This data frame is written to the file <em>tidyData.csv</em>. The details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
 </ul></li>
 <li><em>tidySummary.R</em>
 <ul>
-<li>This scripts loads the data from the file <em>tidyData.csv</em> and generates simple summary statistics (mean values) after grouping by subject id and activity. The result is a data frame that is written to the file <em>tidySummary.csv</em>. The dimensions of this dataframe is 180x68 and details of its structure can be found in the <a href="README.html">README</a> file in the repo.</li>
+<li>This scripts loads the data from the file <em>tidyData.csv</em> and generates simple summary statistics (mean values) after grouping by subject id and activity. The result is a data frame that is written to the file <em>tidySummary.csv</em>. The dimensions of this dataframe is 180x68 and details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
 </ul></li>
 </ul></li>
 </ol>
-<p>Details of the operations of these scripts are found in <a href="README.html">README</a>. Also see comments within the scripts.</p>
+<p>Details of the operations of these scripts are found in <a href="README.Rmd" class="uri">README.Rmd</a>. Also see comments within the scripts.</p>
 </div>
 
 

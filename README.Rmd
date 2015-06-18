@@ -5,7 +5,7 @@
 
 This repository contains files associated with the final project in the
 course, Getting and Cleaning Data Coursera Data Science Series. It is 
-recommended that you read ths document and the *Cookbook.Rmd* before
+recommended that you read ths document and the [CodeBook.Rmd](CodeBook.Rmd) before
 digging any further.
 
 

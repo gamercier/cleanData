@@ -209,12 +209,12 @@ and *tidySummary.csv* files by calling auxilliary R scripts in the following ord
     + *readMergeClean.R*
         + loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt,
         y_train.txt, and y_test.txt) into memory and merges the *train* and *test* data
-        sets by stacking the *X_train.txt* data on top of the *X_test.txt* data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 data frame. In the process the activity codes are converted from integer data to factors to match the description in *activity_labels.txt*. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This data frame is written to the file *tidyData.csv*. The details of its structure can be found in the [README](README.html) file in the repo.
+        sets by stacking the *X_train.txt* data on top of the *X_test.txt* data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 data frame. In the process the activity codes are converted from integer data to factors to match the description in *activity_labels.txt*. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This data frame is written to the file *tidyData.csv*. The details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
       
     + *tidySummary.R*
         + This scripts loads the data from the file *tidyData.csv* and generates
-        simple summary statistics (mean values) after grouping by subject id and activity. The result is a data frame that is written to the file *tidySummary.csv*. The dimensions of this dataframe is 180x68 and details of its structure can be found in the [README](README.html) file in the repo.
+        simple summary statistics (mean values) after grouping by subject id and activity. The result is a data frame that is written to the file *tidySummary.csv*. The dimensions of this dataframe is 180x68 and details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
 
-Details of the operations of these scripts are found in [README](README.html). Also see
+Details of the operations of these scripts are found in [README.Rmd](README.Rmd). Also see
 comments within the scripts.
 
