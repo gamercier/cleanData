@@ -246,7 +246,7 @@ write.table(tidySummary,file.path(GIT.repo,"tidySummary.csv"),row.names=F)
   ```
 
 
- #### Output (abbreviated) from `print(tidySummary)`:
+#### Output (abbreviated) from `print(tidySummary)`:
 
  ```
 > print(tidySummary)
