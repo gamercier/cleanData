@@ -78,7 +78,7 @@ the __readMergeClean.R__ script.
 This script will read the data, create a series of dataframes to merge
 the data in the *data/test* and *data/train* directories, select columns
 from this merged data, and finally prepend columns to identify the subjects
-and activity associated with the data. The final data frame is written to a file,
+and activity associated with the data. The final dataframe is written to a file,
 *tidyData.csv*, using write.table function. This tidy data file can be read using
 `read.table(file.path(GIT.repo,"tidyData.csv"),header=T)`
 
@@ -122,9 +122,13 @@ activity    | 10299x1
 
   From the merged file (i.e. data) columns containg data that
 is either "mean" or "std" are selected, and loaded into a new
-data frame, `selectedData` with dimensions 10299x66. For convenience
+dataframe, `selectedData` with dimensions 10299x66. For convenience
 the column names in `selectedData` are renamed to provide descriptive
-names consistent with those in the *features.txt* file.
+names consistent with those in the *features.txt* file. However, their
+column order is preserved as listed in the table below. For example,
+tAcc.avg.X, tAcc.avg.Y, and tAcc.avg.Z are in columns 1 through 3 of
+`selectedDAta` (and subsequently columns 3 through 5 in `tidyData` given
+the changes described below).
 
 Name in *feature.txt*      | Column Name in "data"   | Descriptive Name in `selectedData`
 ---------------------------|-------------------------|-----------------------------------
@@ -163,7 +167,11 @@ fBodyBodyGyroMag-std()     |   V530                  |  fGyroMag.std
 fBodyBodyGyroJerk-mean()   |   V542                  |  fGyroJerk.avg       
 fBodyBodyGyroJerk-std()    |   V543                  |  fGyroJerk.std       
 
-  * Rename `activity` data frame single column to "Activity"
+* Notes:
+    + Extension -XYZ means the name is repeated with extensions -X (or .X), etc
+      for the X, Y, Z directions.
+
+  * Rename `activity` dataframe single column to "Activity"
 
   * Converts activity data into a factor variable
 
@@ -187,7 +195,7 @@ Activity Value  |  Factor Level
 The `subjects`, `activity`, and `selectedData` dataframes are merged by using `cbind`.
 This creates a `tidyData` dataframe with the first column containing the subject
 ids, the second column the activity as a factor with 6 levels, and the remaining
-columns the data. The `tidyData` data frame has dimensions 10299x68 with the following
+columns the data. The `tidyData` dataframe has dimensions 10299x68 with the following
 struture:
 
 
@@ -234,9 +242,11 @@ measures in *tidyData.csv* but grouped based on "Subject" and "Activity".
 The __dplyr__ package is used for creating the groups and summary.
 The output is a dataframe, `tidySummary`, written to *tidySummary.csv*.
 
-`bySubjectAndActivity <- group_by(inputData,Subject,Activity)`
-`tidySummary <- summarise_each(bySubjectAndActivity,funs(mean))`
-`write.table(tidySummary,file.path(GIT.repo,"tidySummary.csv"),row.names=F)`
+```
+bySubjectAndActivity <- group_by(inputData,Subject,Activity)
+tidySummary <- summarise_each(bySubjectAndActivity,funs(mean))
+write.table(tidySummary,file.path(GIT.repo,"tidySummary.csv"),row.names=F)
+```
 
 
 #### Output (abbreviated) from `print(tidySummary)`:

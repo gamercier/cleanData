@@ -141,7 +141,7 @@ subject ids remain unchanged as integers from 1-30, but the activity labels were
 converted to a factor with labels.
 
 The `tidyData` dataframe has dimensions 10299x68 while the `tidySummary` data
-frame has dimensions 180x68 since it is produced by generaing the means for the
+frame has dimensions 180x68 since it is produced by generating the means for the
 66 variables but grouped by Subject (30) and Activity (6).
 
 
@@ -193,15 +193,15 @@ fBodyBodyGyroJerk-std()     |  543         |fGyroJerk.std       |  68
     computed from the 128 readings for each activity and subject combination
     + In the time domain:
         + Acc = acceleration in units of "g".
-            + 1g = Earth's gravitational acceleration=$9.8 m/s^2$.
-        + AccJerk= first derivative of the acceleration in units of $g/s$.
-        + Gyro = angular velocity in units of $radians/s$
-        + GyroJerk = first derivative of the angular velociy in units of $radians/s^2$
+            + 1g = Earth's gravitational acceleration = $\frac{9.8 m}{s^2}$.
+        + AccJerk= first derivative of the acceleration in units of $\frac{g}{s}$.
+        + Gyro = angular velocity in units of $\frac{radians}{s}$
+        + GyroJerk = first derivative of the angular velociy in units of $\frac{radians}{s^2}$
     + In frequency domain fourier transformed time domain data units:
         + Acc = $g-s$
         + AccJerk = $g$
         + Gyro = $radians$
-        + GyroJerk = $radians/s^2$
+        + GyroJerk = $\frac{radians}{s}$
 
 
 # Steps in generating clean data
@@ -216,7 +216,7 @@ and *tidySummary.csv* files by calling auxilliary R scripts in the following ord
     + *readMergeClean.R*
         + loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt,
         y_train.txt, and y_test.txt) into memory and merges the *train* and *test* data
-        sets by stacking the *X_train.txt* data on top of the *X_test.txt* data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 dataframe. In the process the activity codes are converted from integer data to factors to match the description in *activity_labels.txt*. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This dataframe is written to the file *tidyData.csv*. The details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
+        sets by stacking the *X_train.txt* data on top of the *X_test.txt* data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 dataframe, `tidyData`. In the process the activity codes are converted from integer data to factors to match the description in *activity_labels.txt*. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This dataframe is written to the file *tidyData.csv*. The details of its structure can be found in the [README.Rmd](README.Rmd) file in the repo.
       
     + *tidySummary.R*
         + This scripts loads the data from the file *tidyData.csv* and generates

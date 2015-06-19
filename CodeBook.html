@@ -228,7 +228,7 @@ img {
 <div id="variables-and-units" class="section level1">
 <h1>Variables and Units</h1>
 <p>The tidy data only includes a subset of the features in the source data – 66 of the 561 features. The table below lists the 66 variables using names in the <em>features.txt</em> file, and the column number for the variable in the source files, <em>X_train.txt</em> and <em>X_test.txt</em>. For simplicity the labels listed in <em>features.txt</em> have been renamed for use as labels in the columns (3-68) of the <code>tidyData</code> dataframe saved in <em>tidyData.csv</em>, and also used in the <code>tidySummary</code> dataframe saved under <em>tidySummary.csv</em> and that was submitted to the assignment area in Coursera. The 1st and 2nd columns of the <code>tidyData</code> and <code>tidySummary</code> dataframes contain the subject and activity ids and are labeled, Subject and Activity, respectively. The subject ids remain unchanged as integers from 1-30, but the activity labels were converted to a factor with labels.</p>
-<p>The <code>tidyData</code> dataframe has dimensions 10299x68 while the <code>tidySummary</code> data frame has dimensions 180x68 since it is produced by generaing the means for the 66 variables but grouped by Subject (30) and Activity (6).</p>
+<p>The <code>tidyData</code> dataframe has dimensions 10299x68 while the <code>tidySummary</code> data frame has dimensions 180x68 since it is produced by generating the means for the 66 variables but grouped by Subject (30) and Activity (6).</p>
 <div id="variable-names-and-locations" class="section level2">
 <h2>Variable names and locations:</h2>
 <table>
@@ -458,18 +458,18 @@ img {
 <ul>
 <li>Acc = acceleration in units of “g”.
 <ul>
-<li>1g = Earth’s gravitational acceleration=<span class="math">\(9.8 m/s^2\)</span>.</li>
+<li>1g = Earth’s gravitational acceleration = <span class="math">\(\frac{9.8 m}{s^2}\)</span>.</li>
 </ul></li>
-<li>AccJerk= first derivative of the acceleration in units of <span class="math">\(g/s\)</span>.</li>
-<li>Gyro = angular velocity in units of <span class="math">\(radians/s\)</span></li>
-<li>GyroJerk = first derivative of the angular velociy in units of <span class="math">\(radians/s^2\)</span></li>
+<li>AccJerk= first derivative of the acceleration in units of <span class="math">\(\frac{g}{s}\)</span>.</li>
+<li>Gyro = angular velocity in units of <span class="math">\(\frac{radians}{s}\)</span></li>
+<li>GyroJerk = first derivative of the angular velociy in units of <span class="math">\(\frac{radians}{s^2}\)</span></li>
 </ul></li>
 <li>In frequency domain fourier transformed time domain data units:
 <ul>
 <li>Acc = <span class="math">\(g-s\)</span></li>
 <li>AccJerk = <span class="math">\(g\)</span></li>
 <li>Gyro = <span class="math">\(radians\)</span></li>
-<li>GyroJerk = <span class="math">\(radians/s^2\)</span></li>
+<li>GyroJerk = <span class="math">\(\frac{radians}{s}\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -487,7 +487,7 @@ img {
 </ul></li>
 <li><em>readMergeClean.R</em>
 <ul>
-<li>loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt, y_train.txt, and y_test.txt) into memory and merges the <em>train</em> and <em>test</em> data sets by stacking the <em>X_train.txt</em> data on top of the <em>X_test.txt</em> data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 dataframe. In the process the activity codes are converted from integer data to factors to match the description in <em>activity_labels.txt</em>. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This dataframe is written to the file <em>tidyData.csv</em>. The details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
+<li>loads the data (X_train.txt, X_test.txt, subject_train.txt, subject_test.txt, y_train.txt, and y_test.txt) into memory and merges the <em>train</em> and <em>test</em> data sets by stacking the <em>X_train.txt</em> data on top of the <em>X_test.txt</em> data. It then selects the specific variables and renames the variable names to match the table above. Subject ids and activity codes are clipped to the left of the merged data to create a 10299x68 dataframe, <code>tidyData</code>. In the process the activity codes are converted from integer data to factors to match the description in <em>activity_labels.txt</em>. However, the factor levels are all lower case, except for the first letter (i.e WALKING becoms Walking). This dataframe is written to the file <em>tidyData.csv</em>. The details of its structure can be found in the <a href="README.Rmd" class="uri">README.Rmd</a> file in the repo.</li>
 </ul></li>
 <li><em>tidySummary.R</em>
 <ul>
