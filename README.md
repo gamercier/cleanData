@@ -63,12 +63,12 @@ This script uses built-in R functions to download the data,
 uncompressed the downloaded zip file, and rename the default
 uncompressed directory name to *data*.
 
-The download url is hard coded to the one listed in the *Cookbook.md*.
+The download url is hard coded to the one listed in the *CodeBook.md*.
 
 # readMergeClean.R
 
 This script assumes the data has been downloaded to a the *data* directory
-with a tree structure as listed under the *Cookbook.md*. It is the default
+with a tree structure as listed under the *CodeBook.md*. It is the default
 tree structure you get from uncompressing the downloaded data. The script
 `downLoadData.R` will take care of these steps, and should be run before
 the `readMergeClean.R` script.
