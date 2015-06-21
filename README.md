@@ -128,6 +128,7 @@ tAcc.avg.X, tAcc.avg.Y, and tAcc.avg.Z are in columns 1 through 3 of
 `selectedDAta` (and subsequently columns 3 through 5 in `tidyData` given
 the changes described below).
 
+
      Name in *feature.txt*      | Column Name in "data"   | Descriptive Name in `selectedData`
      ---------------------------|-------------------------|-----------------------------------
      tBodyAcc-mean()-XYZ        |   V1:V3                 |  tAcc.avg.XYZ        
