@@ -26,7 +26,7 @@ tidySummary.csv      | Output of tidySummary.R script.
 
 
 All files are in the top directory of the repo, and the only subdirectory
-is *data*. The directory tree for *data* is described in *Codebook.md*.
+is *data*. The directory tree for *data* is described in *CodeBook.md*.
 
 # Script operations
 
