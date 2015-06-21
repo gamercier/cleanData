@@ -14,7 +14,7 @@ The following files are in this repository:
 File                 |   Description
 ---------------------|---------------------------------------------------
 README.md           | Describes content and scripts using R markdown
-CookBook.md         | Details data, its source and processing.
+CodeBook.md         | Details data, its source and processing.
 data                 | Directory containing downloaded data.
 run_analysis.R       | Master script to tidy data and create summary.
 setWDir.R            | Script to set working directory to this repo.
